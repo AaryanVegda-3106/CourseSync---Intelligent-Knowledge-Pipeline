@@ -1,0 +1,3 @@
+"""
+CourseSync — API Routes Package
+"""

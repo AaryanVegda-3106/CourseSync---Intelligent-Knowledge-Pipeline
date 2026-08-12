@@ -1,0 +1,3 @@
+"""
+CourseSync — Services Package
+"""

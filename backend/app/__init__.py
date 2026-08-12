@@ -1,0 +1,3 @@
+"""
+CourseSync — App Package
+"""
