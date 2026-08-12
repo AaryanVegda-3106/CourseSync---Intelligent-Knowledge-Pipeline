@@ -1,0 +1,227 @@
+.hero-composition {
+  position: relative;
+  width: 600px;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+.hero-comp-glow {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.25) 0%, transparent 60%);
+  filter: blur(40px);
+  z-index: 0;
+}
+
+.hero-comp-pills {
+  position: absolute;
+  left: -20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 10;
+}
+
+.comp-pill {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(30, 17, 54, 0.8);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  padding: 8px 16px 8px 8px;
+  border-radius: 30px;
+  backdrop-filter: blur(10px);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  animation: float-pill 4s ease-in-out infinite;
+  box-shadow: 0 4px 20px rgba(168, 85, 247, 0.2);
+}
+
+.comp-pill-icon {
+  width: 28px;
+  height: 28px;
+  background: #a855f7;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.comp-pill-icon svg {
+  width: 14px;
+  height: 14px;
+}
+
+@keyframes float-pill {
+  0% { transform: translateX(0) translateY(0); }
+  50% { transform: translateX(10px) translateY(-5px); }
+  100% { transform: translateX(0) translateY(0); }
+}
+
+.hero-comp-center {
+  position: relative;
+  z-index: 5;
+  transform: rotateY(-15deg) rotateX(5deg);
+  transform-style: preserve-3d;
+}
+
+.comp-laptop {
+  width: 380px;
+  height: 260px;
+  background: #0f0a1d;
+  border-radius: 12px 12px 0 0;
+  border: 2px solid #3b2866;
+  padding: 12px;
+  position: relative;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5), inset 0 0 40px rgba(168, 85, 247, 0.2);
+}
+
+.comp-laptop-screen {
+  background: #090514;
+  height: 100%;
+  border-radius: 4px;
+  padding: 16px;
+  border: 1px solid rgba(168, 85, 247, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.comp-laptop-base {
+  position: absolute;
+  bottom: -16px;
+  left: -20px;
+  right: -20px;
+  height: 16px;
+  background: linear-gradient(90deg, #1f1b3b, #3b2866, #1f1b3b);
+  border-radius: 0 0 12px 12px;
+}
+
+.comp-laptop-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #a855f7;
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.comp-task {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  margin-bottom: 12px;
+  color: #9ca3af;
+}
+
+.comp-task.done {
+  color: #fff;
+}
+
+.comp-task .check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  background: #a855f7;
+  border-radius: 50%;
+  font-size: 10px;
+  color: #fff;
+}
+
+.comp-task .spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(168, 85, 247, 0.3);
+  border-top-color: #a855f7;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.comp-progress {
+  margin-top: 24px;
+  height: 6px;
+  background: rgba(168, 85, 247, 0.2);
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+}
+
+.comp-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #a855f7, #ec4899);
+  border-radius: 3px;
+}
+
+.comp-progress-text {
+  text-align: right;
+  font-size: 10px;
+  color: #a855f7;
+  margin-top: 4px;
+  font-weight: 700;
+}
+
+.hero-comp-output {
+  position: absolute;
+  right: -40px;
+  top: 60px;
+  z-index: 20;
+  transform: rotateY(-20deg) rotateZ(5deg);
+}
+
+.comp-glass-card {
+  width: 180px;
+  background: rgba(168, 85, 247, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  border-radius: 12px;
+  padding: 20px;
+  color: #fff;
+  box-shadow: 0 10px 40px rgba(168, 85, 247, 0.3);
+  animation: float 6s ease-in-out infinite alternate;
+}
+
+.comp-glass-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.comp-glass-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 11px;
+  color: #d1d5db;
+}
+
+.comp-glass-list div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero-comp-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
