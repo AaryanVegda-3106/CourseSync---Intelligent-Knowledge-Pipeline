@@ -137,7 +137,7 @@ class NemotronProvider(LLMProvider):
                     {"role": "user", "content": user},
                 ],
                 temperature=0.2,
-                max_tokens=4096,
+                max_tokens=2048,
             )
             return response.choices[0].message.content or ""
         except Exception as e:
