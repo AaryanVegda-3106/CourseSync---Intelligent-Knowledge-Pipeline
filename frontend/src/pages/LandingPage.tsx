@@ -3,22 +3,49 @@ import { useNavigate } from 'react-router-dom';
 
 const FLOW_STEPS = [
   {
-    icon: '🌐',
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="2" y1="12" x2="22" y2="12"></line>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+      </svg>
+    ),
     title: '1. Provide a Course URL',
     desc: 'Paste the link to any supported course track (like a Binance Academy track). CourseSync will instantly begin mapping the entire curriculum.',
   },
   {
-    icon: '🕷️',
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M2 12h20"></path>
+        <path d="M12 2v20"></path>
+        <path d="m4.9 4.9 14.2 14.2"></path>
+        <path d="m4.9 19.1 14.2-14.2"></path>
+        <circle cx="12" cy="12" r="3"></circle>
+      </svg>
+    ),
     title: '2. AI Discovery & Scraping',
     desc: 'Using Firecrawl, we bypass blocks and extract pristine markdown from every module and lesson, automatically filtering out noise.',
   },
   {
-    icon: '🧠',
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+        <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+        <line x1="12" y1="22.08" x2="12" y2="12"></line>
+      </svg>
+    ),
     title: '3. LLM Structuring',
     desc: 'An advanced Large Language Model analyzes each scraped page to clean it up, extract metadata, and classify it as a lecture, quiz, or reading.',
   },
   {
-    icon: '🚀',
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M4 22h14a2 2 0 0 0 2-2V7.5L14.5 2H6a2 2 0 0 0-2 2v4"></path>
+        <polyline points="14 2 14 8 20 8"></polyline>
+        <path d="M2 15h10"></path>
+        <path d="m9 18 3-3-3-3"></path>
+      </svg>
+    ),
     title: '4. NotebookLM Ready',
     desc: 'Export cleanly organized, logically separated Markdown files that you can directly drag and drop into Google NotebookLM to build a personal AI tutor.',
   }
@@ -80,9 +107,7 @@ export default function LandingPage() {
     <div className="landing-container">
       <div ref={cursorRef} className={`custom-cursor ${hovering ? 'hovering' : ''}`} />
       
-      {/* Abstract Background Shapes */}
-      <div className="bg-shape bg-shape-1" />
-      <div className="bg-shape bg-shape-2" />
+      {/* Abstract Background Shapes Removed for solid industrial look */}
 
       {/* Hero Section */}
       <section className="landing-hero">
@@ -109,11 +134,11 @@ export default function LandingPage() {
       {/* Flow Section */}
       <section className="landing-flow">
         {FLOW_STEPS.map((step, index) => (
-          <div key={index} className="flow-step card" style={{ display: 'flex', border: '1px solid rgba(255,255,255,0.1)' }}>
-            <div className="flow-step-icon" style={{ background: 'linear-gradient(135deg, rgba(124, 58, 237, 0.2), rgba(147, 51, 234, 0.05))', border: '1px solid rgba(124, 58, 237, 0.3)' }}>{step.icon}</div>
+          <div key={index} className="flow-step">
+            <div className="flow-step-icon">{step.icon}</div>
             <div className="flow-step-content">
-              <div className="flow-step-title" style={{ color: '#fff' }}>{step.title}</div>
-              <div className="flow-step-desc" style={{ color: 'var(--color-text-secondary)' }}>{step.desc}</div>
+              <div className="flow-step-title">{step.title}</div>
+              <div className="flow-step-desc">{step.desc}</div>
             </div>
           </div>
         ))}

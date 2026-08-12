@@ -757,9 +757,9 @@ tr:hover td {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: var(--color-bg-base);
+  background: radial-gradient(circle at top, #1e1b4b 0%, #030014 70%);
   color: var(--color-text-primary);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: var(--font-sans);
   overflow-x: hidden;
   position: relative;
 }
@@ -774,14 +774,12 @@ tr:hover td {
 }
 
 .landing-title {
-  font-size: 56px;
+  font-size: 64px;
   line-height: 1.1;
-  font-weight: 800;
-  letter-spacing: -0.02em;
+  font-weight: 900;
+  letter-spacing: -0.03em;
   margin-bottom: 24px;
-  background: linear-gradient(135deg, #fff 0%, #a0a0a0 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #ffffff;
   animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   opacity: 0;
   transform: translateY(20px);
@@ -807,21 +805,21 @@ tr:hover td {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  background: var(--color-accent);
+  background: #7c3aed;
   color: #fff;
-  padding: 16px 32px;
-  border-radius: 32px;
+  padding: 16px 40px;
+  border-radius: 40px;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 14px 0 rgba(79, 70, 229, 0.39);
+  box-shadow: 0 0 30px rgba(124, 58, 237, 0.5);
 }
 
 .landing-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.23);
-  background: var(--color-accent-hover);
+  box-shadow: 0 0 40px rgba(124, 58, 237, 0.7);
+  background: #9333ea;
 }
 
 .landing-flow {
@@ -837,12 +835,12 @@ tr:hover td {
 
 .flow-step {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 32px;
-  background: var(--color-bg-elevated);
+  background: #030014;
   padding: 32px;
   border-radius: var(--radius-lg);
-  border: 1px solid var(--color-border);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
@@ -857,12 +855,10 @@ tr:hover td {
   width: 64px;
   height: 64px;
   border-radius: 16px;
-  background: var(--color-accent-muted);
-  color: var(--color-accent);
+  background: #1e1b4b;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 28px;
   flex-shrink: 0;
 }
 
@@ -872,8 +868,9 @@ tr:hover td {
 
 .flow-step-title {
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 8px;
+  color: #fff;
 }
 
 .flow-step-desc {
