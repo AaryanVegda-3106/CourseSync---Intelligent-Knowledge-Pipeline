@@ -807,7 +807,7 @@ tr:hover td {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  background: var(--color-primary);
+  background: var(--color-accent);
   color: #fff;
   padding: 16px 32px;
   border-radius: 32px;
@@ -821,7 +821,7 @@ tr:hover td {
 .landing-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(79, 70, 229, 0.23);
-  background: var(--color-primary-hover);
+  background: var(--color-accent-hover);
 }
 
 .landing-flow {
@@ -857,8 +857,8 @@ tr:hover td {
   width: 64px;
   height: 64px;
   border-radius: 16px;
-  background: var(--color-primary-muted);
-  color: var(--color-primary);
+  background: var(--color-accent-muted);
+  color: var(--color-accent);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -909,22 +909,22 @@ body.landing-page button {
   left: 0;
   width: 20px;
   height: 20px;
-  background-color: var(--color-primary);
+  background-color: var(--color-accent);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
   transform: translate(-50%, -50%);
   transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), height 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease;
   mix-blend-mode: screen;
-  box-shadow: 0 0 20px var(--color-primary);
+  box-shadow: 0 0 20px var(--color-accent);
 }
 
 .custom-cursor.hovering {
   width: 60px;
   height: 60px;
-  background-color: rgba(79, 70, 229, 0.2);
-  border: 2px solid var(--color-primary);
-  box-shadow: 0 0 30px rgba(79, 70, 229, 0.5);
+  background-color: rgba(124, 58, 237, 0.2);
+  border: 2px solid var(--color-accent);
+  box-shadow: 0 0 30px rgba(124, 58, 237, 0.5);
 }
 
 /* Abstract Background Shapes */
@@ -942,7 +942,7 @@ body.landing-page button {
   right: -5%;
   width: 600px;
   height: 600px;
-  background: var(--color-primary);
+  background: var(--color-accent);
 }
 
 .bg-shape-2 {
