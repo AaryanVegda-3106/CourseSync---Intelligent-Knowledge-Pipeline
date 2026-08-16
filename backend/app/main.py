@@ -8,6 +8,7 @@ configures CORS, and sets up error handlers.
 from __future__ import annotations
 
 import logging
+import os
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, Request
@@ -60,16 +61,27 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
-# ── CORS (allow frontend dev server) ─────────────────────
+# ── CORS (allow frontend dev server + Vercel production) ──
+
+_cors_origins = [
+    "http://localhost:5173",   # Vite dev server
+    "http://localhost:3000",
+    "http://127.0.0.1:5173",
+    "http://127.0.0.1:3000",
+]
+
+# Dynamically add Vercel deployment URLs when running on Vercel
+_vercel_url = os.environ.get("VERCEL_URL")
+if _vercel_url:
+    _cors_origins.append(f"https://{_vercel_url}")
+
+_vercel_prod_url = os.environ.get("VERCEL_PROJECT_PRODUCTION_URL")
+if _vercel_prod_url:
+    _cors_origins.append(f"https://{_vercel_prod_url}")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",   # Vite dev server
-        "http://localhost:3000",
-        "http://127.0.0.1:5173",
-        "http://127.0.0.1:3000",
-    ],
+    allow_origins=_cors_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
