@@ -36,9 +36,9 @@ class FirecrawlService:
             try:
                 from firecrawl import Firecrawl
                 self._client = Firecrawl(api_key=self._api_key)
-            except ImportError:
+            except ImportError as e:
                 raise FirecrawlError(
-                    "firecrawl-py package not installed. Run: pip install firecrawl-py",
+                    f"firecrawl-py package not installed or failed to load. Original error: {e}",
                     stage="init",
                 )
             except Exception as e:
