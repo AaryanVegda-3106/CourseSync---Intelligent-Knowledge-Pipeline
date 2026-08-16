@@ -1,0 +1,10 @@
+{
+  "name": "course-sync-root",
+  "private": true,
+  "scripts": {
+    "build": "cd frontend && npm install && npm run build"
+  },
+  "devDependencies": {
+    "vite": "^8.2.0"
+  }
+}
